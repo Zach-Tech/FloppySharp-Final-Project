@@ -4,7 +4,7 @@
 
 
 
-###Features will be added / updated as this project is fleshed out:
+### Features will be added / updated as this project is fleshed out:
 
 * Custom bot status
 * Admin Commands
