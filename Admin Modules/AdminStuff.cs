@@ -63,15 +63,6 @@ namespace ZacharyChilders_Final_Project_CPT_185_FloppySharp.Admin_Modules
 
 
 
-        [Command("off"),
-            Alias("ok back to your hole",
-            "stop",
-            "go away",
-            "end")]
-        [Remarks("Shuts off the bot with style :)")]
-        [RequireUserPermission(GuildPermission.Administrator)]
-        public async Task EndSession
-     
 
 
 
