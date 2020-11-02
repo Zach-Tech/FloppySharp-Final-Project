@@ -18,14 +18,15 @@ namespace ZacharyChilders_Final_Project_CPT_185_FloppySharp.Services
 
     class FloppySharp
     {
-        
+
         static void Main(string[] args) => new FloppySharp().RunBotAsync().GetAwaiter().GetResult();
 
         private DiscordSocketClient _client;
         private CommandService _commands;
         private IServiceProvider _services;
-        private readonly IConfigurationRoot _configure;
-        
+
+        string token = "token";
+
         public async Task RunBotAsync()
         {
             _client = new DiscordSocketClient();
@@ -36,7 +37,6 @@ namespace ZacharyChilders_Final_Project_CPT_185_FloppySharp.Services
                 .AddSingleton(_commands)
                 .BuildServiceProvider();
 
-            string token = _configure["Token"];
 
             _client.Log += _client_Log;
 
@@ -50,7 +50,8 @@ namespace ZacharyChilders_Final_Project_CPT_185_FloppySharp.Services
 
         }
 
-        private Task _client_Log(LogMessage arg)
+
+    private Task _client_Log(LogMessage arg)
         {
             Console.WriteLine(arg);
             return Task.CompletedTask;
