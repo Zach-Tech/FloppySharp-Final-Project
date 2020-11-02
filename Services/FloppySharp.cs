@@ -9,18 +9,23 @@ using System.Threading.Tasks;
 using Discord.Commands;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.IO;
+using Microsoft.Extensions.Configuration;
 
 namespace ZacharyChilders_Final_Project_CPT_185_FloppySharp.Services
 {
 
     class FloppySharp
     {
+        
         static void Main(string[] args) => new FloppySharp().RunBotAsync().GetAwaiter().GetResult();
 
         private DiscordSocketClient _client;
         private CommandService _commands;
         private IServiceProvider _services;
-
+        private readonly IConfigurationRoot _configure;
+        
         public async Task RunBotAsync()
         {
             _client = new DiscordSocketClient();
@@ -31,7 +36,7 @@ namespace ZacharyChilders_Final_Project_CPT_185_FloppySharp.Services
                 .AddSingleton(_commands)
                 .BuildServiceProvider();
 
-            string token = "NjgwNTI5NDU0MjAzNjY2NDc5.XlBOcQ.frcoKjP6Hxr0Jo8WGK2QPiHwgW8";
+            string token = _configure["Token"];
 
             _client.Log += _client_Log;
 
@@ -70,9 +75,6 @@ namespace ZacharyChilders_Final_Project_CPT_185_FloppySharp.Services
                 if (!result.IsSuccess) Console.WriteLine(result.ErrorReason);
                 if (result.Error.Equals(CommandError.UnmetPrecondition)) await message.Channel.SendMessageAsync(result.ErrorReason);
             }
-
-
-            
 
 
         }
