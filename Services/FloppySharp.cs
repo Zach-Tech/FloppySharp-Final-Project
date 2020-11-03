@@ -25,7 +25,7 @@ namespace ZacharyChilders_Final_Project_CPT_185_FloppySharp.Services
         private CommandService _commands;
         private IServiceProvider _services;
 
-        string token = "token";
+        string token = "NjgwNTI5NDU0MjAzNjY2NDc5.XlBOcQ.5FxZMNbNxTTxjIofefnFAIcO5x4";
 
         public async Task RunBotAsync()
         {

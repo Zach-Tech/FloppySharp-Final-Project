@@ -1,4 +1,5 @@
-﻿using Discord.Commands;
+﻿using Discord;
+using Discord.Commands;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -11,6 +12,7 @@ namespace ZacharyChilders_Final_Project_CPT_185_FloppySharp.Misc
 {
     public class MiscCommands:ModuleBase<CommandContext>
     {
+        
 
         [Command("add")]
         [Summary("Adds 2 numbers together.")]
@@ -68,6 +70,9 @@ namespace ZacharyChilders_Final_Project_CPT_185_FloppySharp.Misc
 
             await ReplyAsync($"{MathButCooler.PerformComputation(sentence.ToString())}");
         }
+
+
+      
 
 
 
